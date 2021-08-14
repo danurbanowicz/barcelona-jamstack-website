@@ -2,6 +2,8 @@
 
 Built with [Eleventy](https://www.11ty.dev) and deployed to [Netlify](https://www.netlify.com).
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b52f86a-f58e-4140-9d73-397274593265/deploy-status)](https://app.netlify.com/sites/barcelonajamstack/deploys)
+
 ## Get a copy for yourself!
 
 To get started, clone this repo and install the dependencies:

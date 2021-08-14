@@ -93,7 +93,7 @@ Specifically have a look at `.eleventy.js` to see if you want to configure any E
 npm install @11ty/eleventy
 ```
 
-### 4. Edit _data/metadata.json
+### 4. Edit _data/settings.json
 
 This file contains your site title and author details, and can be used to store any other commonly used site data.
 

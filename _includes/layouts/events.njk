@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+section: events
+permalink: /events/index.html
+---
+<section class="intro">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <p>See our <a href="#upcoming-events">upcoming events</a> or <a href="#past-events">past events</a></p>
+    <p>{{ summary | safe }}</p>
+
+    <div class="buttons-container">
+
+      {% include "components/button-signup.njk" %}
+
+    </div>
+
+  </div>
+</section>
+
+<section class="container">
+
+  <h2 id="upcoming-events">Upcoming events</h2>
+
+  {% set hasUpcoming = collections.event | upcomingEvents %}
+
+  {% if hasUpcoming.length %}
+    
+    {% for event in collections.event | upcomingEvents %}
+
+      {% include "components/event-short.njk" %}
+  
+    {% endfor %}
+
+  {% else %}
+    
+    {% include "components/message-no-events.njk" %}
+
+  {% endif %}
+
+</section>
+
+<section class="container">
+
+  <h2 id="past-events">Past events</h2>
+
+  {% for event in collections.event | pastEvents %}
+    
+    {% include "components/event-short.njk" %}
+  
+  {% endfor %}
+
+</section>

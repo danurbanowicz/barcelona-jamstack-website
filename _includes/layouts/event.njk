@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+section: event
+---
+<article class="container">
+  <h1>{{ title }}</h1>
+  <p>
+    <time datetime="{{ date | isoDateTime }}">
+			<small>{{ date | readableDateTime }}</small>
+		</time>
+  </p>
+
+  {{ layoutContent | safe }}
+
+  {% if tags %}
+    <p>Topics:
+    {% for tag in tags %}
+      {%- if tag != "event" -%}
+        {% set tagUrl %}/topics/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" rel="tag">{{ tag | capitalize }}</a>
+      {%- endif -%}
+    {% endfor %}
+    </p>
+  {% endif %}
+
+</article>
+
+{% include "components/back.njk" %}

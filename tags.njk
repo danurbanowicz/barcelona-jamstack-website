@@ -5,21 +5,30 @@ pagination:
   alias: tag
   filter:
     - all
-    - nav
-    - post
-    - posts
-permalink: /tags/{{ tag }}/
+    - event
+permalink: /topics/{{ tag }}/
 layout: layouts/base.njk
 renderData:
-  title: "Tagged “{{ tag }}”"
-  metaDescription: "All posts from the Blog tagged with “{{ tag }}”"
+  title: "Topic: “{{ tag }}”"
+  metaDescription: "Events tagged with the topic “{{ tag }}”"
 ---
+<section class="intro">
+  <div class="container">
+    <h1>Topic: {{ tag }}</h1>
+    <p>Events tagged with the topic "{{ tag }}"</p>
+  </div>
+</section>
 
-<h1>Tagged “{{ tag }}”</h1>
+<section class="container">
 
-{% set postslist = collections[tag] %}
-{% include "components/postslist.njk" %}
+  {% set eventslist = collections[tag] %}
 
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+  {% for event in eventslist | reverse %}
+
+    {% include "components/event-short.njk" %}
+
+  {% endfor %}
+
+</section>
+
+{% include "components/back.njk" %}

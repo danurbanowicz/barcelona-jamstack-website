@@ -1,4 +1,4 @@
-const { DateTime } = require("luxon");
+const dotenv = require("dotenv").config();
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
@@ -9,42 +9,59 @@ module.exports = function(eleventyConfig) {
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
-  // layout aliases! Say you have a bunch of existing content using
-  // layout: post. If you don’t want to rewrite all of those values, just map
-  // post to a new file like this:
-  // eleventyConfig.addLayoutAlias("post", "layouts/my_new_post_layout.njk");
-
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 
-  // Add support for maintenance-free post authors
-  // Adds an authors collection using the author key in our post frontmatter
-  // Thanks to @pdehaan: https://github.com/pdehaan
-  eleventyConfig.addCollection("authors", collection => {
-    const blogs = collection.getFilteredByGlob("posts/*.md");
-    return blogs.reduce((coll, post) => {
-      const author = post.data.author;
-      if (!author) {
-        return coll;
-      }
-      if (!coll.hasOwnProperty(author)) {
-        coll[author] = [];
-      }
-      coll[author].push(post.data);
-      return coll;
-    }, {});
+  // Output readable dates
+  eleventyConfig.addFilter("readableDateTime", function(dateObj) {
+    return new Date(dateObj).toLocaleString([],{
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "numeric",
+      timeZoneName: "short"
+    });
   });
 
-  // Date formatting (human readable)
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
+  // Output the date only for comparing days
+  eleventyConfig.addFilter("getDate", function(dateObj) {
+    return new Date(dateObj).toLocaleString([],{
+      year: "numeric",
+      month: "numeric",
+      day: "numeric"
+    });
   });
 
-  // Date formatting (machine readable)
-  eleventyConfig.addFilter("machineDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+  // Output ISO 8601 dates for use in HTML datetime attribute
+  eleventyConfig.addFilter("isoDateTime", function(dateObj) {
+    return new Date(dateObj).toISOString([]);
+  });
+
+  // Get upcoming events
+  eleventyConfig.addFilter("upcomingEvents", function(events) {
+    return events.filter(event => {
+      return new Date(event.date) > new Date();
+    });
+  });
+
+  // Get the next event
+  eleventyConfig.addFilter("nextEvent", function(events) {
+    const upcomingEvents = function(events) {
+      return events.filter(event => {
+        return new Date(event.date) > new Date();
+      });
+    }
+    const filteredEvents = upcomingEvents(events)
+    return filteredEvents.length > 0 ? filteredEvents[0].data.event : null
+  });
+
+  // Get past events
+  eleventyConfig.addFilter("pastEvents", function(events) {
+    return events.filter(event => {
+      return new Date(event.date) < new Date();
+    });
   });
 
   // Minify CSS
@@ -78,7 +95,6 @@ module.exports = function(eleventyConfig) {
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("static/img");
-  eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("_includes/assets/");
 
   /* Markdown Plugins */

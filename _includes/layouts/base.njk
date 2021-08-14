@@ -6,17 +6,33 @@
 	<body>
 
 		<header>
-			<em>
-				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
-			</em>
-			{% include "components/nav.njk" %}
+
+			<a href="{{ '/' | url }}">
+				<img src="/static/img/logo.svg" width="180" height="88" alt="{{ settings.title }}">
+			</a>
+
+			<nav>
+				{% set navPages = collections.all | eleventyNavigation %}
+				<ul>
+				{%- for entry in navPages %}
+					<li>
+						<a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %} class="navlink">{{ entry.title }}</a>
+					</li>
+				{%- endfor %}
+				</ul>
+			</nav>
+
 		</header>
 
 		<main>
 			{{ layoutContent | safe }}
 		</main>
 
-		{% include "components/footer.njk" %}
+		<footer>
+			<section class="container">
+				<p>This site is built with <a href="https://www.11ty.dev">11ty</a> and deployed to <a href="https://www.netlify.com">Netlify</a>. View the <a href="{{ pkg.repository.url }}">source code</a>.</p>
+			</section>
+		</footer>
 
 	</body>
 

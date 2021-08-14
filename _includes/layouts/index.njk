@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+section: home
+---
+<section class="intro">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <p>{{ summary | safe }}</p>
+
+    <div class="buttons-container">
+
+      {% include "components/button-signup.njk" %}
+
+    </div>
+
+  </div>
+</section>
+
+{% set event = collections.event | upcomingEvents | first %}
+
+<section class="container">
+
+  <h2>Our next meeting</h2>
+
+  {% if event %}
+
+    {% include "components/event-short.njk" %}
+
+    <p><a href="/events">See all events →</a></p>
+    
+  {% else %}
+
+    {% include "components/message-no-events.njk" %}
+
+  {% endif %}
+
+</section>
+
+<section class="container" id="newsletter">
+
+  {% include "components/form-signup.njk" %}
+
+</section>

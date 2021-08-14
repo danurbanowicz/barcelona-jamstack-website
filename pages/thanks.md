@@ -1,5 +1,6 @@
 ---
-title: Successssssss!
+title: Awesome!
+seoTitle: Thanks
 section: thanks
 layout: layouts/page.njk
 permalink: /thanks/index.html

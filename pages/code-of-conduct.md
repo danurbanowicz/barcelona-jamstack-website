@@ -1,5 +1,6 @@
 ---
 title: Code of Conduct
+seoTitle: Code of Conduct - Barcelona Jamstack
 summary: Please take a moment to read the rules that help to keep our community welcoming for everyone.
 date: 2017-01-01
 permalink: /code-of-conduct/index.html

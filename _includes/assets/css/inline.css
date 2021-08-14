@@ -97,13 +97,9 @@ main {
 }
 
 /* Header Logo */
-header > a  {
-	justify-self: left;
-}
-
-header > a img {
-	width: 180px;
+header > a {
 	padding: 1rem;
+	justify-self: left;
 }
 
 /* Header Nav */

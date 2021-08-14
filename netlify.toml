@@ -1,18 +1,3 @@
 [build]
   publish = "_site"
   command = "eleventy"
-
-[build.environment]
-  TZ = "Europe/Madrid"
-
-# [[redirects]]
-#   from = "https://www.poblesec150.cat/*"
-#   to = "https://poblesec150.netlify.app/:splat"
-#   status = 301
-#   force = true
-
-# [[redirects]]
-#   from = "https://poblesec150.cat/*"
-#   to = "https://poblesec150.netlify.app/:splat"
-#   status = 301
-#   force = true

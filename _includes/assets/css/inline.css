@@ -1,11 +1,9 @@
 :root {
 	--color-bg: floralwhite;
 	--color-text: rgba(0, 0, 0, 0.8);
-	--color-btn: #7F4FDE;
+	--color-brand: #7F4FDE;
+	--color-brand-light: #bd7fef;
 	--color-btn-text: white;
-	--color-dot: #bd7fef;
-	--color-link: #7F4FDE;
-	--color-link-hover: #7F4FDE;
 	--color-sticker: #e5f4f1;
 	--font-base: -apple-system, blinkmacsystemfont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
 }
@@ -35,7 +33,7 @@ body {
 	line-height: 1.5;
 	background-color: var(--color-bg);
 	background-size: 30px 30px;
-	background-image:  radial-gradient(var(--color-dot) 0.5px, transparent 0.5px), radial-gradient(var(--color-dot) 0.5px, var(--color-bg) 0.5px);
+	background-image:  radial-gradient(var(--color-brand-light) 0.5px, transparent 0.5px), radial-gradient(var(--color-brand-light) 0.5px, var(--color-bg) 0.5px);
 	background-position: 0 0,15px 15px;
 }
 
@@ -70,12 +68,12 @@ small {
 
 a[href],
 a[href]:visited {
-	color: var(--color-link);
+	color: var(--color-brand);
 	text-decoration: none;
 }
 
 a[href]:hover {
-	color: var(--color-link-hover);
+	color: var(--color-brand);
 }
 
 img {
@@ -135,7 +133,7 @@ article {
 	position: relative;
 	background-color: white;
 	padding: 2rem;
-	border-left: 6px solid var(--color-dot);
+	border-left: 6px solid var(--color-brand-light);
 	box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
 }
 
@@ -170,7 +168,7 @@ form label {
 
 input {
 	padding: 1rem;
-	border: 3px solid var(--color-btn);
+	border: 3px solid var(--color-brand);
 	font-family: var(--font-base);
 	font-size: inherit;
 	margin: 0;
@@ -189,8 +187,8 @@ a[href].button {
 	font-family: var(--font-base);
 	font-size: 1rem;
 	border: none;
-	background-color: var(--color-btn);
-	border: 3px solid var(--color-btn);
+	background-color: var(--color-brand);
+	border: 3px solid var(--color-brand);
 	color: var(--color-btn-text);
 	cursor: pointer;
 	margin: 0;
@@ -204,7 +202,7 @@ a[href].button::before {
 	left: -9px;
 	right: 3px;
 	bottom: -9px;
-	background: var(--color-dot);
+	background: var(--color-brand-light);
 	z-index: -1;
 }
 

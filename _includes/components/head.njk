@@ -3,7 +3,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ seoTitle or renderData.seoTitle or settings.title }}</title>
   <meta name="description" content="{{ summary or settings.description }}">
-  {% if noindex %}<meta name="robots" content="noindex">{% endif %}
+  {% if noindex %}
+    <meta name="robots" content="noindex">
+  {% else %}
+    <link rel="canonical" href="{{ settings.url }}{{ page.url | url }}">
+  {% endif %}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏖️</text></svg>">
   {% set css %}
     {% include "assets/css/inline.css" %}

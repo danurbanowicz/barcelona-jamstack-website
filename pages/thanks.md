@@ -2,6 +2,7 @@
 title: Awesome!
 seoTitle: Thanks
 section: thanks
+noindex: true
 layout: layouts/page.njk
 permalink: /thanks/index.html
 ---

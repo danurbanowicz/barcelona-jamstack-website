@@ -33,6 +33,7 @@
     "clean-css": "^4.2.1",
     "dotenv": "^10.0.0",
     "html-minifier": "^4.0.0",
+    "node-fetch": "^2.6.1",
     "uglify-es": "^3.3.9"
   }
 }

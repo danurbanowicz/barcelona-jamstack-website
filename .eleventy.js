@@ -1,4 +1,3 @@
-const date = require("nunjucks-date");
 const dotenv = require("dotenv").config();
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
@@ -38,6 +37,11 @@ module.exports = function(eleventyConfig) {
   // Output ISO 8601 dates for use in HTML datetime attribute
   eleventyConfig.addFilter("isoDateTime", function(dateObj) {
     return new Date(dateObj).toISOString([]);
+  });
+
+  // limit loop output e.g. {% for item in items | limit(5) %}
+  eleventyConfig.addNunjucksFilter('limit', function(arr, limit) {
+    return arr.slice(0, limit);
   });
 
   // Get upcoming events

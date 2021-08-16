@@ -6,7 +6,7 @@ date: 2021-06-01T19:00:00.000+0200
 location: Online
 summary: The first of our friendly and informal virtual hangouts to chat about the Jamstack and related web development topics, and how we can use modern tooling to create fast and highly engaging web experiences
 tags:
-  - hangout
+  - general
   - online
 ---
 The first Barcelona Jamstack after work virtual hangout! 🎉🎉🎉

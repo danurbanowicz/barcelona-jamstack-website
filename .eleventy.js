@@ -1,3 +1,4 @@
+const date = require("nunjucks-date");
 const dotenv = require("dotenv").config();
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
@@ -21,7 +22,7 @@ module.exports = function(eleventyConfig) {
       month: "long",
       year: "numeric",
       hour: "numeric",
-      timeZoneName: "short"
+      timeZoneName: "short",
     });
   });
 

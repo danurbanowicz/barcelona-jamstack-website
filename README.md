@@ -1,6 +1,6 @@
-# The Barcelona Jamstack Meetup website
+# The Jamstack Barcelona Meetup website
 
-## https://barcelonajamstack.dev
+## https://jamstackbarcelona.dev
 
 Built with [Eleventy](https://www.11ty.dev) and deployed to [Netlify](https://www.netlify.com) nightly using a [GitHub Action](https://github.com/danurbanowicz/barcelona-jamstack-website/blob/main/.github/workflows/schedule-netlify-build.yml). 
 

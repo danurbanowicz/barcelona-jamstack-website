@@ -1,6 +1,6 @@
 ---
 title: After work virtual hangout
-seoTitle: After work virtual hangout - Barcelona Jamstack
+seoTitle: After work virtual hangout - Jamstack Barcelona
 metaDescription: This is a sample meta description.
 date: 2021-06-01T19:00:00.000+0200
 location: Online

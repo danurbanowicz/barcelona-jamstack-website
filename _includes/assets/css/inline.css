@@ -137,6 +137,13 @@ article {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.08);
 }
 
+time {
+	font-size: 0.75rem;
+	background-color: var(--color-sticker);
+	padding: .25rem .5rem;
+	border-radius: .25rem;
+}
+
 .sticker {
 	position: absolute;
 	top: 0;

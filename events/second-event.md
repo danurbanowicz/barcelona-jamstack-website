@@ -9,7 +9,7 @@ tags:
   - general
   - online
 ---
-The first Barcelona Jamstack after work virtual hangout! 🎉🎉🎉
+The first **Jamstack Barcelona** after work virtual hangout! 🎉🎉🎉
 
 A friendly and informal virtual hangout to chat about the [Jamstack](https://jamstack.org/) and related web development topics such as: Headless CMS/Headless e-commerce, APIs, Static Site Generators, CDNs, Git, Vanilla JavaScript, CI/CD deployment techniques, and how we can use these tools to easily create fast and highly engaging web experiences.
 

@@ -5,7 +5,8 @@
 	--color-brand-light: #bd7fef;
 	--color-btn-text: white;
 	--color-sticker: #e5f4f1;
-	--font-base: -apple-system, blinkmacsystemfont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+	--font-base: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-heading: "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
 }
 
 *, *:before, *:after {
@@ -42,7 +43,7 @@ body {
 }
 
 .container {
-	max-width: 66ch;
+	max-width: 60ch;
 	padding: 1rem;
 	margin: 0 auto;
 }
@@ -51,6 +52,10 @@ h1 {
 	/* Clamp() works thus: [lower bound], [ideal size], [upper bound] */
 	font-size: clamp(1rem, 10vw, 3rem);
 	line-height: 1.3;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: var(--font-heading);
 }
 
 [data-current="home"] h1::after {
@@ -218,12 +223,14 @@ a[href].button::before {
 	z-index: -1;
 }
 
+button span,
 .button span {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+button svg,
 .button svg {
 	margin-right: 0.5rem;
 }

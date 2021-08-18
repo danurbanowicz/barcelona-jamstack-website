@@ -6,6 +6,6 @@ noindex: true
 layout: layouts/page.njk
 permalink: /thanks/index.html
 ---
-Thanks for subscribing to the {{ settings.title }} mailing list.
+Thanks for subscribing to the {{ settings.title }} newsletter.
 
 Please check your inbox for a confirmation email. Click it and you're in!

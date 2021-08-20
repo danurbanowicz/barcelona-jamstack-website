@@ -7,5 +7,13 @@ module.exports = {
   meetup: "https://www.meetup.com/jamstack-barcelona/",
   slack: "https://jamstack.slack.com/archives/C02CFSUTYQG",
   buildTime: new Date(),
-  currentYear: (new Date()).getFullYear()
+  currentYear: (new Date()).getFullYear(),
+  organizers: [
+    {
+      name: "Dan Urbanowicz",
+      id: 1,
+      email: "dan.urbanowicz@gmail.com",
+      website: "https://github.com/danurbanowicz"
+    }
+  ]
 }

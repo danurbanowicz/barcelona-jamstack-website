@@ -10,7 +10,7 @@ module.exports = {
   currentYear: (new Date()).getFullYear(),
   organizers: [
     {
-      name: "Dan Urbanowicz",
+      name: "Dan",
       id: 1,
       email: "dan.urbanowicz@gmail.com",
       website: "https://github.com/danurbanowicz"

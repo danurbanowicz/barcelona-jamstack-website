@@ -1,6 +1,6 @@
 module.exports = {
   title: "Jamstack Barcelona",
-  description: "A meetup group",
+  description: "A Jamstack meetup group",
   url: "https://jamstackbarcelona.dev",
   domain: "jamstackbarcelona.dev",
   email: "jamstackbarcelona@gmail.com",

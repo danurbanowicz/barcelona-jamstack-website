@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="{{ eleventy.generator }}">
   <title>{{ seoTitle or renderData.seoTitle or settings.title }}</title>
   <meta name="description" content="{{ summary or settings.description }}">
   {% if noindex %}

@@ -1,8 +1,8 @@
 module.exports = {
   title: "Jamstack Barcelona",
   description: "A Jamstack meetup group",
-  url: "https://jamstackbarcelona.dev",
-  domain: "jamstackbarcelona.dev",
+  url: "https://jamstackbarcelona.netlify.app",
+  domain: "jamstackbarcelona.netlify.app",
   email: "jamstackbarcelona@gmail.com",
   slack: "https://jamstack.slack.com/archives/C02CFSUTYQG",
   buildTime: new Date(),
